@@ -1,4 +1,4 @@
-# Name: Jay Razdan
+# Name: Jay Razda
 
 def wordcount(text):
     text = ' ' + text + ' ' # to prevent first index from being a non-whitespace followed by whitespace
