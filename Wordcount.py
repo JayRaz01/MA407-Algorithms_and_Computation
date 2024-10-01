@@ -1,4 +1,4 @@
-# Name: Jay Razdan, Student Number: 202135075
+# Name: Jay Razdan
 
 def wordcount(text):
     text = ' ' + text + ' ' # to prevent first index from being a non-whitespace followed by whitespace
