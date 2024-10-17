@@ -1,4 +1,4 @@
-# Name: Jay Razdan, Student Number: 202135075
+# Name: Jay Razdan
 
 def primeAtLeast(n):
     if n <= 2: # if n is less than or equal to 2 the closest above prime is 2
