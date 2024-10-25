@@ -51,9 +51,9 @@ def test():
     if test_request == "A":
         test_list = [7,7,10,23,42,42,42,51,60]
     elif test_request == "B":
-        test_list = [i for i in range(1,200000000,2)]
+        test_list = list(range(1 , 200000000 , 2))
     elif test_request == "C":
-        test_list = [9 for i in range(0,100000000)]
+        test_list = [9] * (10**8)
     request = int(12500001)
     # define a list of length greater than 100 as large
     if len(test_list) > 100:
@@ -74,17 +74,13 @@ def test():
         print(f"Key {request} found at index {result}.")
 
     ### Testing the insert() function ###
-    test_key = 12500001
-    test_x = [i for i in range(1,200000000,2)]
-    test_y = [i for i in range(1,200000000,2)]
-    final_list = insert(key=test_key, x=test_x)
-    test_y.append(request)
-    test_y.sort()
-    if final_list == test_y:
+    final_list = insert(key=request, x=test_list)
+    test_list.append(request)
+    test_list.sort()
+    if final_list == test_list:
         return "The insert() function works! :)"
     else:
         return "The insert() function doesn't work :("
-
 
 ####################
 ### Exercise 3.4 ###
@@ -94,12 +90,11 @@ def insert(key,x):
     # the index of the key to be inserted into the list is the output of the binsearch function
     index = binsearch(key=key, x=x, i=0, j=len(x))
     # the key is inserted at this index
-    x.insert(index, key)
-    return x
+    y = x[:index] + [key] + x[index:]
+    return y
 
 ######################
 ### Testing Output ###
 ######################
-
 Test = test()
 print(Test)
